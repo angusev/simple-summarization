@@ -48,7 +48,7 @@ async def upload_file(file: UploadFile = File(...)) -> SummaryResponse:
 
     try:
         summary = run(text_to_process)
-    except OpenAIUnavailableException:
+    except OpenAIUnavailableException as e:
         raise HTTPException(
             status_code=503,
             detail=f"OpenAI API is currently unavailable: {e}",
