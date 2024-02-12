@@ -13,8 +13,8 @@ def test_upload(endpoint_url, file_path):
         print("Response:", response.text)
 
 if __name__ == "__main__":
-    UPLOAD_ENDPOINT = "http://127.0.0.1:8000/upload/"
+    UPLOAD_ENDPOINT = "https://simple-summarization.onrender.com/upload/"
     
-    FILE_PATH = "test.txt"
+    FILE_PATH = "./testing/test.txt"
     
     test_upload(UPLOAD_ENDPOINT, FILE_PATH)
