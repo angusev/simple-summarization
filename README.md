@@ -53,3 +53,10 @@ To deploy the application on Render.com, a Dockerfile is prepared. Follow these 
    
 3. Enjoy  the app using the link provided by Render.
 
+## Testing
+
+Simply run the following command to test the deployed solution:
+
+```bash
+python testing/test.py
+```
