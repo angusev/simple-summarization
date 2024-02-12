@@ -55,6 +55,7 @@ text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
     chunk_size=1000, chunk_overlap=0
 )
 
+
 def run(text_to_process: str):
     split_docs = text_splitter.split_text(text_to_process)
 
