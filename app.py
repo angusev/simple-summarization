@@ -1,8 +1,7 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
 from summarization import run
-
 
 app = FastAPI(
     title="Simple Summarization API",
@@ -18,8 +17,7 @@ class SummaryResponse(BaseModel):
 
 @app.post("/upload/", response_model=SummaryResponse)
 async def upload_file(file: UploadFile = File(...)) -> SummaryResponse:
-    """
-    Uploads a .txt document and returns its summary if the document's size is within acceptable bounds.
+    """Uploads a .txt document and returns its summary if the document's size is within acceptable bounds.
 
     - **file**: UploadFile - A .txt file containing the document to be summarized.
 
