@@ -7,7 +7,6 @@ This application prepares coherent and concise summaries for `.txt` files.
 ![system](media/how-it-works.png)
 
 
-
 Users upload `.txt` documents through the `/upload` endpoint. Upon receiving a document, the application:
 
 1. Splits the document into manageable segments.
@@ -25,17 +24,14 @@ Users upload `.txt` documents through the `/upload` endpoint. Upon receiving a d
 
 To set up and run the application on your local machine, follow these steps:
 
-1. **Install Dependencies**:
-
-   Execute the following command:
+1. **Install Dependencies**: Execute the following command:
 
    ```bash
    pip install -r requirements.txt
    ```
 
 
-2. **Environment Variables**:
-Write your `OPENAI_API_KEY` to the `.env`.
+2. **Environment Variables**: Write your `OPENAI_API_KEY` to the `.env`.
 
 1. **Run the Application**:
 
@@ -49,10 +45,11 @@ This command starts a local development server. Access the application by naviga
 
 To deploy the application on Render.com, a Dockerfile is prepared. Follow these steps:
 
-1. **Create a New Web Service on Render**:
+1. Create a New Web Service on Render:
 - Log into your Render account and select "New Web Service".
 - Connect it to this GitHub repository.
-2. **Configure the Web Service**:
-- Set environment variable `OPENAI_API_KEY` in the Render service settings.
-3. **Enjoy**  the app using the link provided by Render.
+  
+2. Set environment variable `OPENAI_API_KEY` in the Render service settings.
+   
+3. Enjoy  the app using the link provided by Render.
 

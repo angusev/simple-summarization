@@ -1,7 +1,8 @@
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
-from summarization import run
+from src.summarization import run, OpenAIUnavailableException
+
 
 app = FastAPI(
     title="Simple Summarization API",
@@ -45,6 +46,12 @@ async def upload_file(file: UploadFile = File(...)) -> SummaryResponse:
             detail=f"Document too long. Maximum length is {max_length} characters.",
         )
 
-    summary = run(text_to_process)
+    try:
+        summary = run(text_to_process)
+    except OpenAIUnavailableException:
+        raise HTTPException(
+            status_code=503,
+            detail=f"OpenAI API is currently unavailable: {e}",
+        )
 
     return SummaryResponse(summary=summary)
