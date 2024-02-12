@@ -45,7 +45,7 @@ uvicorn app.main:app --reload
 
 This command starts a local development server. Access the application by navigating to `http://localhost:8000` in your web browser.
 
-## Deploying on Render [Production]
+## Deploying on Render [Production] ![system](media/renderco_logo.jpeg)
 
 To deploy the application on Render, a Dockerfile is prepared. Follow these steps:
 
